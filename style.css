@@ -8,7 +8,7 @@
 --clr-main-pr: hsla(0, 0%, 100%, 0.75);
 --clr-main-stats: hsla(0, 0%, 100%, 0.6);
 
---fs:15px
+--fs:15px;
 
 --ff-normal: 'Inter', sans-serif;
 --ff-accent: 'Lexend Deca', sans-serif;
@@ -19,7 +19,7 @@
  1. Use a more-intuitive box-sizing model.
 */
 *, *::before, *::after  {
-    box-sizing;
+    box-sizing:border-box;
   }
   /*
    2. Remove default margin
@@ -60,4 +60,86 @@
   */
   p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
+  }
+
+
+  body{
+    background-color: var(--clr-main-bg);
+    color: var(--clr-main-pr);
+    font-size: var(--fs);
+    font-family: var(--ff-normal);
+    font-weight: 400;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+
+
+  }
+  .card{
+    margin: 1rem;
+    background-color: var(--clr-card-bg);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    max-width: 350px;
+    
+}
+.card_photo{
+    position: relative;
+}
+.card_photo::after{
+
+    content:"" ;
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr-accent);
+    opacity: 0.8;
+    mix-blend-mode: multiply;
+}
+.card_content{
+    padding: 1rem;
+    display: flex;  
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    
+    
+  }
+  h1{
+    color: var(--clr-main-hd);
+    font-size: 1.5rem;
+  }
+ 
+  .card_content>p{
+    color: var(--clr-main-pr);
+    font-family: var(--ff-accent);
+    font-size: 0.8rem;
+  }
+  .card_content>h1>span{
+    color: var(--clr-accent);
+  }
+  ul{
+    color: var(--clr-main-hd);
+    list-style-type: none;
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+  }
+  ul>li>p{
+    color: var(--clr-main-hd);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  ul>li>span{
+    color: var(--clr-main-hd);
+    text-transform: uppercase;
+    font-family: var(--ff-accent);
+    font-size: 0.8rem;
   }
